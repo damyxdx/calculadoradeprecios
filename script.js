@@ -18,8 +18,13 @@ function calculate() {
             result = inputValue * 1.21 * 2;
     }
 
-    // Redondear el resultado para que termine en multiplos de 50
-    result = Math.round(result / 50) * 50;
+    // Ajustar el resultado para que termine en "50" o "00"
+    const remainder = result % 100;
+    if (remainder < 50) {
+        result = result - remainder + 50; // Redondear hacia abajo a "50"
+    } else {
+        result = result - remainder + 100; // Redondear hacia arriba a "00"
+    }
 
     document.getElementById('result').textContent = result.toFixed(2);
 }
