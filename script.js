@@ -10,17 +10,16 @@ function calculate() {
 
     switch (brand) {
         case 'marca1':
-            result = inputValue * 1.21 * 2 + 500;
+            result = inputValue * 1.21 * 2 + 500; // Aplicar el cálculo y suma de bolsa
             break;
         case 'marca2':
-            result = inputValue * 1.21 * 2;
-            break;
         case 'marca3':
-            result = inputValue * 1.21 * 2;
-            break;
         default:
             result = inputValue * 1.21 * 2;
     }
+
+    // Redondear el resultado para que termine en multiplos de 50
+    result = Math.round(result / 50) * 50;
 
     document.getElementById('result').textContent = result.toFixed(2);
 }
