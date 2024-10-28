@@ -44,11 +44,19 @@ function calculate() {
 }
 
 function handleKeyPress(event) {
+    // Permitir solo números, la tecla Backspace y el punto decimal
+    const allowedKeys = ['Backspace', 'Enter', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Decimal', '.'];
+
+    if (!allowedKeys.includes(event.key) && (event.key < '0' || event.key > '9')) {
+        event.preventDefault(); // Evita que se ingrese un carácter no permitido
+    }
+
     if (event.key === 'Enter') {
         calculate();
         document.getElementById('inputValue').value = ''; // Limpia el campo de entrada
     }
 }
+
 
 function addToHistory(brand, inputValue, result) {
     const historyTable = document.getElementById('historyTable').getElementsByTagName('tbody')[0];

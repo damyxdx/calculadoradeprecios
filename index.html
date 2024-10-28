@@ -16,7 +16,7 @@
     </div>
     <div>
         <label for="inputValue">Ingresa un número:</label>
-        <input type="number" id="inputValue" onkeypress="handleKeyPress(event)">
+        <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)"/>
     </div>
     <button onclick="calculate()">Calcular</button>
     <h2>Resultado: <span id="result">-</span></h2>
