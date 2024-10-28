@@ -2,6 +2,8 @@ let selectedBrand = 'General'; // Marca predeterminada
 
 function selectBrand(brand) {
     selectedBrand = brand;
+    
+    // Actualizar el estilo de los botones para resaltar el botón seleccionado
     document.querySelectorAll('.brand-button').forEach(button => {
         button.classList.toggle('active', button.textContent === brand);
     });
