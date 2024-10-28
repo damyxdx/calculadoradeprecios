@@ -22,7 +22,7 @@ function calculate() {
         case 'General':
             result = inputValue * 1.21 * 2 + 500;
             break;
-        case 'Fashion':
+        case 'Fashion/Bathbazar':
             result = inputValue * 1.26 * 2 + 500;
             break;
         case 'marca3':
