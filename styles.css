@@ -11,13 +11,11 @@ label {
     margin-right: 10px;
 }
 
-input, select, button {
+input, button {
     padding: 5px;
 }
 
-/* Estilos para responsividad */
 button {
-    width: 100%; /* Botón ocupa todo el ancho */
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -25,10 +23,27 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    width: 100%; /* Ocupa el ancho completo en dispositivos móviles */
 }
 
 button:hover {
     background-color: #45a049;
+}
+
+/* Estilo para los botones de marca */
+.brand-button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+}
+
+.brand-button.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
 @media (max-width: 600px) {
