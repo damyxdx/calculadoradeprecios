@@ -1,5 +1,13 @@
+let selectedBrand = 'General'; // Marca predeterminada
+
+function selectBrand(brand) {
+    selectedBrand = brand;
+    document.querySelectorAll('.brand-button').forEach(button => {
+        button.classList.toggle('active', button.textContent === brand);
+    });
+}
+
 function calculate() {
-    const brand = document.getElementById('brand').value;
     const inputValue = parseFloat(document.getElementById('inputValue').value);
     let result;
 
@@ -8,11 +16,11 @@ function calculate() {
         return;
     }
 
-    switch (brand) {
+    switch (selectedBrand) {
         case 'General':
             result = inputValue * 1.21 * 2 + 500;
             break;
-        case 'Fashion/Bathbazar':
+        case 'Fashion':
             result = inputValue * 1.26 * 2 + 500;
             break;
         case 'marca3':
@@ -30,7 +38,7 @@ function calculate() {
     }
 
     document.getElementById('result').textContent = result.toFixed(2);
-    addToHistory(brand, inputValue, result.toFixed(2));
+    addToHistory(selectedBrand, inputValue, result.toFixed(2));
 }
 
 function handleKeyPress(event) {
