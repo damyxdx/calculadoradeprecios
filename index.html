@@ -9,12 +9,10 @@
 <body>
     <h1>Calculadora de Fórmulas</h1>
     <div>
-        <label for="brand">Selecciona una marca:</label>
-        <select id="brand">
-            <option value="General">General</option>
-            <option value="Fashion">Fashion/Bathbazar</option>
-            <option value="marca3">Marca 3</option>
-        </select>
+        <label>Selecciona una marca:</label>
+        <button class="brand-button" onclick="selectBrand('General')">General</button>
+        <button class="brand-button" onclick="selectBrand('Fashion')">Fashion</button>
+        <button class="brand-button" onclick="selectBrand('marca3')">Marca 3</button>
     </div>
     <div>
         <label for="inputValue">Ingresa un número:</label>
