@@ -1,10 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    display: flex;               /* Utiliza flexbox para centrar contenido */
+    flex-direction: column;      /* Alinea los elementos en una columna */
+    align-items: center;         /* Centra los elementos horizontalmente */
+    justify-content: center;     /* Centra los elementos verticalmente */
+    height: 100vh;              /* Ocupa toda la altura de la ventana */
 }
 
 div {
     margin-bottom: 10px;
+    width: 100%;                /* Ocupa el ancho completo del contenedor */
+    max-width: 400px;           /* Ancho máximo para dispositivos grandes */
 }
 
 label {
@@ -13,6 +20,7 @@ label {
 
 input, button {
     padding: 5px;
+    width: 100%;                /* Ocupa el ancho completo del contenedor */
 }
 
 button {
@@ -23,7 +31,6 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-    width: 100%; /* Ocupa el ancho completo en dispositivos móviles */
 }
 
 button:hover {
@@ -39,6 +46,7 @@ button:hover {
     background-color: #f0f0f0;
     color: #333;
     cursor: pointer;
+    width: 100%;                /* Ocupa el ancho completo del contenedor */
 }
 
 .brand-button.active {
