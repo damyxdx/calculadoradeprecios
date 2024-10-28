@@ -1,3 +1,4 @@
+
 function calculate() {
     const brand = document.getElementById('brand').value;
     const inputValue = parseFloat(document.getElementById('inputValue').value);
@@ -9,11 +10,15 @@ function calculate() {
     }
 
     switch (brand) {
-        case 'marca1':
-            result = inputValue * 1.21 * 2 + 500; // Aplicar el cálculo y suma de bolsa
+        case 'General':
+            result = inputValue * 1.21 * 2 +500;
             break;
-        case 'marca2':
+        case 'Fashion/bathbazar/':
+            result = inputValue * 1.26 * 2 +500;
+            break;
         case 'marca3':
+            result = inputValue * 1.21 * 2;
+            break;
         default:
             result = inputValue * 1.21 * 2;
     }
