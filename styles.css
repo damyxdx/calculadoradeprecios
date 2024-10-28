@@ -14,3 +14,25 @@ label {
 input, select, button {
     padding: 5px;
 }
+
+/* Estilos para responsividad */
+button {
+    width: 100%; /* Botón ocupa todo el ancho */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+}
