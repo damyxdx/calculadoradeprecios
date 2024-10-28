@@ -42,7 +42,7 @@ button:hover {
 }
 
 .brand-button.active {
-    background-color: #4CAF50;
+    background-color: #007bff; /* Color resaltado para el botón seleccionado */
     color: white;
 }
 
