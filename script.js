@@ -46,7 +46,8 @@ function calculate() {
 function handleKeyPress(event) {
     if (event.key === 'Enter') {
         calculate();
-        document.getElementById('inputValue').value = ''; // Limpia el campo de entrada
+        const inputField = document.getElementById('inputValue');
+        inputField.select(); // Selecciona el campo de entrada
     }
 }
 
