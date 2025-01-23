@@ -20,16 +20,16 @@ function calculate() {
 
     switch (selectedBrand) {
         case 'General':
-            result = inputValue * 1.21 * 2 + 500;
+            result = inputValue * 1.21 * 2 + 700;
             break;
         case 'Fashion/Bathbazar':
-            result = inputValue * 1.26 * 2 + 500;
+            result = inputValue * 1.26 * 2 + 700;
             break;
         case 'marca3':
             result = inputValue * 1.21 * 2;
             break;
         default:
-            result = inputValue * 1.21 * 2;
+            result = inputValue * 1.21 * 2 + 700;
     }
 
     const remainder = result % 100;
