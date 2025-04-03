@@ -8,19 +8,43 @@
 </head>
 <body>
     <h1>Calculadora de Fórmulas</h1>
-    <div>
-        <label>Selecciona una marca:</label>
-        <button class="brand-button" onclick="selectBrand('General')">General</button>
-        <button class="brand-button" onclick="selectBrand('Fashion/Bathbazar')">Fashion/Bathbazar</button>
-        <button class="brand-button" onclick="selectBrand('marca3')">Marca 3</button>
+
+    <!-- Selector de categoría -->
+    <div id="categorySelector">
+        <button class="category-button" onclick="showCategory('bazar')">Bazar</button>
+        <button class="category-button" onclick="showCategory('plantabaja')">Planta Baja</button>
     </div>
+
+    <!-- Campo de entrada y resultado -->
     <div>
         <label for="inputValue">Ingresa un número:</label>
-        <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)"/>
+        <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)" />
     </div>
     <button onclick="calculate()">Calcular</button>
     <h2>Resultado: <span id="result">-</span></h2>
 
+    <!-- Botones de marcas -->
+    <div id="brandColumns">
+        <!-- Bazar -->
+        <div id="bazarButtons" class="brand-column">
+            <h3>Bazar</h3>
+            <button class="brand-button" onclick="selectBrand('General')">General</button>
+            <button class="brand-button" onclick="selectBrand('Fashion/Bathbazar')">Fashion/Bathbazar</button>
+        </div>
+
+        <!-- Planta Baja -->
+        <div id="plantaBajaButtons" class="brand-column">
+            <h3>Planta Baja</h3>
+            <button class="brand-button" onclick="selectBrand('1.7')">1.7</button>
+            <button class="brand-button" onclick="selectBrand('1.6')">1.6</button>
+            <button class="brand-button" onclick="selectBrand('1.5')">1.5</button>
+            <button class="brand-button" onclick="selectBrand('1.7 + IVA')">1.7 + IVA</button>
+            <button class="brand-button" onclick="selectBrand('1.6 + IVA')">1.6 + IVA</button>
+            <button class="brand-button" onclick="selectBrand('1.5 + IVA')">1.5 + IVA</button>
+        </div>
+    </div>
+
+    <!-- Historial -->
     <h3>Historial de Operaciones:</h3>
     <table id="historyTable" border="1">
         <thead>
@@ -30,8 +54,7 @@
                 <th>Resultado</th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
+        <tbody></tbody>
     </table>
 
     <script src="script.js"></script>
