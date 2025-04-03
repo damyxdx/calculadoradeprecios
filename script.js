@@ -64,8 +64,9 @@ function calculate() {
         result = result - remainder + 100;
     }
 
-    document.getElementById('result').textContent = result.toFixed(2);
-    addToHistory(selectedBrand, inputValue, result.toFixed(2));
+    document.getElementById('result').textContent = Math.round(result);
+    addToHistory(selectedBrand, inputValue, Math.round(result));
+
 }
 
 function handleKeyPress(event) {
@@ -92,4 +93,14 @@ function addToHistory(brand, inputValue, result) {
     brandCell.textContent = brand;
     inputValueCell.textContent = inputValue;
     resultCell.textContent = result;
+}
+
+function insertNumber(char) {
+    const input = document.getElementById('inputValue');
+    input.value += char;
+}
+
+function deleteLast() {
+    const input = document.getElementById('inputValue');
+    input.value = input.value.slice(0, -1);
 }
