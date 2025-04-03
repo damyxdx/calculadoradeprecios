@@ -1,79 +1,96 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e8ebf0;
+    color: #2e2e2e;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
 }
 
+
+/* Título */
 h1 {
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* Selector de categorías */
+/* Botones de categoría */
 #categorySelector {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .category-button {
     padding: 10px 20px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #eee;
-    color: #333;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2563eb;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .category-button:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: #e0e7ff;
+    color: #1e40af;
 }
 
-/* Área de ingreso y resultado */
+/* Input y botón calcular */
 div {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
 }
 
 label {
-    margin-right: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
 }
 
 input {
-    padding: 5px;
+    padding: 10px;
+    font-size: 15px;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2e2e2e;
 }
 
 button {
     box-sizing: border-box;
 }
 
-/* Botón de calcular */
 button:not(.brand-button):not(.category-button) {
-    background-color: #4CAF50;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #2563eb;
     color: white;
     border: none;
-    padding: 10px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    width: 100%;
+    transition: background-color 0.2s ease;
 }
 
 button:not(.brand-button):not(.category-button):hover {
-    background-color: #45a049;
+    background-color: #1d4ed8;
 }
 
-/* Contenedor de marcas: columna única */
+/* Resultado */
+h2 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Marcas */
 #brandColumns {
     display: flex;
     justify-content: center;
@@ -81,49 +98,121 @@ button:not(.brand-button):not(.category-button):hover {
     width: 100%;
 }
 
-/* Columnas de marcas en vertical */
 .brand-column {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
-    visibility: hidden;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
-    max-width: 400px;
+    max-width: 360px;
 }
 
 .brand-column.visible {
-    visibility: visible;
+    display: flex;
 }
 
 .brand-column h3 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: 500;
     font-size: 16px;
-    text-align: center;
+    color: #2563eb;
 }
 
 .brand-button {
-    padding: 8px 10px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 15px;
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2e2e2e;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.brand-button:hover,
 .brand-button.active {
-    background-color: #007bff;
+    background-color: #2563eb;
     color: white;
+    border-color: #2563eb;
 }
 
-@media (max-width: 600px) {
+/* Historial */
+h3 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #2e2e2e;
+}
+
+table {
+    width: 100%;
+    max-width: 400px;
+    border-collapse: collapse;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+table th, table td {
+    border: 1px solid #d1d5db;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #e0e7ff;
+    color: #1e40af;
+}
+
+@media (max-width: 500px) {
     body {
-        margin: 10px;
+        padding: 10px;
     }
 
-    .brand-button, .category-button {
-        width: 100%;
+    .brand-button,
+    .category-button,
+    button:not(.brand-button):not(.category-button) {
+        font-size: 14px;
     }
+
+    input {
+        font-size: 14px;
+    }
+}
+#virtualKeyboard {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    max-width: 360px;
+    width: 100%;
+}
+
+.vk-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+#virtualKeyboard button {
+    flex: 1;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f7f9fc;
+    color: #2e2e2e;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#virtualKeyboard button:hover {
+    background-color: #e0e7ff;
+}
+
+.vk-calculate {
+    background-color: #2563eb !important;
+    color: white !important;
+    font-weight: bold;
 }
