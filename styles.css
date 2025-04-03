@@ -1,29 +1,64 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    display: flex;               /* Utiliza flexbox para centrar contenido */
-    flex-direction: column;      /* Alinea los elementos en una columna */
-    align-items: center;         /* Centra los elementos horizontalmente */
-    justify-content: center;     /* Centra los elementos verticalmente */
-    height: 100vh;              /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
 }
 
+h1 {
+    margin-bottom: 10px;
+}
+
+/* Selector de categorías */
+#categorySelector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.category-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Área de ingreso y resultado */
 div {
     margin-bottom: 10px;
-    width: 100%;                /* Ocupa el ancho completo del contenedor */
-    max-width: 400px;           /* Ancho máximo para dispositivos grandes */
+    width: 100%;
+    max-width: 400px;
 }
 
 label {
     margin-right: 10px;
 }
 
-input, button {
+input {
     padding: 5px;
-    width: 100%;                /* Ocupa el ancho completo del contenedor */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button {
+    box-sizing: border-box;
+}
+
+/* Botón de calcular */
+button:not(.brand-button):not(.category-button) {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -31,31 +66,64 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
+    width: 100%;
 }
 
-button:hover {
+button:not(.brand-button):not(.category-button):hover {
     background-color: #45a049;
 }
 
-/* Estilo para los botones de marca */
+/* Contenedor de marcas: columna única */
+#brandColumns {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Columnas de marcas en vertical */
+.brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    gap: 8px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.brand-column.visible {
+    visibility: visible;
+}
+
+.brand-column h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
 .brand-button {
-    padding: 10px 15px;
-    margin: 5px;
+    padding: 8px 10px;
+    font-size: 14px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f0f0f0;
     color: #333;
     cursor: pointer;
-    width: 100%;                /* Ocupa el ancho completo del contenedor */
 }
 
 .brand-button.active {
-    background-color: #007bff; /* Color resaltado para el botón seleccionado */
+    background-color: #007bff;
     color: white;
 }
 
 @media (max-width: 600px) {
     body {
         margin: 10px;
+    }
+
+    .brand-button, .category-button {
+        width: 100%;
     }
 }
