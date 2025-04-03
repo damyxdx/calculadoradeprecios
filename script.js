@@ -1,12 +1,22 @@
-let selectedBrand = 'General'; // Marca predeterminada
+let selectedBrand = 'General'; // Por defecto
 
 function selectBrand(brand) {
     selectedBrand = brand;
-    
-    // Actualizar el estilo de los botones para resaltar el botón seleccionado
+
     document.querySelectorAll('.brand-button').forEach(button => {
         button.classList.toggle('active', button.textContent === brand);
     });
+}
+
+function showCategory(category) {
+    document.getElementById('bazarButtons').classList.remove('visible');
+    document.getElementById('plantaBajaButtons').classList.remove('visible');
+
+    if (category === 'bazar') {
+        document.getElementById('bazarButtons').classList.add('visible');
+    } else if (category === 'plantabaja') {
+        document.getElementById('plantaBajaButtons').classList.add('visible');
+    }
 }
 
 function calculate() {
@@ -25,8 +35,23 @@ function calculate() {
         case 'Fashion/Bathbazar':
             result = inputValue * 1.26 * 2 + 700;
             break;
-        case 'marca3':
-            result = inputValue * 1.21 * 2;
+        case '1.7':
+            result = inputValue * 1.7;
+            break;
+        case '1.6':
+            result = inputValue * 1.6;
+            break;
+        case '1.5':
+            result = inputValue * 1.5;
+            break;
+        case '1.7 + IVA':
+            result = inputValue * 1.7 * 1.21;
+            break;
+        case '1.6 + IVA':
+            result = inputValue * 1.6 * 1.21;
+            break;
+        case '1.5 + IVA':
+            result = inputValue * 1.5 * 1.21;
             break;
         default:
             result = inputValue * 1.21 * 2 + 700;
@@ -44,20 +69,17 @@ function calculate() {
 }
 
 function handleKeyPress(event) {
-    // Permitir solo números, la tecla Backspace y el punto decimal
     const allowedKeys = ['Backspace', 'Enter', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Decimal', '.'];
 
     if (!allowedKeys.includes(event.key) && (event.key < '0' || event.key > '9')) {
-        event.preventDefault(); // Evita que se ingrese un carácter no permitido
+        event.preventDefault();
     }
 
     if (event.key === 'Enter') {
         calculate();
-        const inputField = document.getElementById('inputValue');
-        inputField.select(); // Selecciona el campo de entrada
+        document.getElementById('inputValue').select();
     }
 }
-
 
 function addToHistory(brand, inputValue, result) {
     const historyTable = document.getElementById('historyTable').getElementsByTagName('tbody')[0];
