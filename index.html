@@ -14,63 +14,33 @@
         <button class="category-button" onclick="showCategory('bazar')">Bazar</button>
         <button class="category-button" onclick="showCategory('plantabaja')">Planta Baja</button>
     </div>
-    <!-- Botones de marcas -->
-    <div id="brandColumns">
-        <!-- Bazar -->
-        <div id="bazarButtons" class="brand-column">
-            <h3>Bazar</h3>
-            <button class="brand-button" onclick="selectBrand('General')">General</button>
-            <button class="brand-button" onclick="selectBrand('Fashion/Bathbazar')">Fashion/Bathbazar</button>
-        </div>
-
-        <!-- Planta Baja -->
-        <div id="plantaBajaButtons" class="brand-column">
-            <h3>Planta Baja</h3>
-            <button class="brand-button" onclick="selectBrand('1.7')">1.7</button>
-            <button class="brand-button" onclick="selectBrand('1.6')">1.6</button>
-            <button class="brand-button" onclick="selectBrand('1.5')">1.5</button>
-            <button class="brand-button" onclick="selectBrand('1.7 + IVA')">1.7 + IVA</button>
-            <button class="brand-button" onclick="selectBrand('1.6 + IVA')">1.6 + IVA</button>
-            <button class="brand-button" onclick="selectBrand('1.5 + IVA')">1.5 + IVA</button>
-        </div>
+<!-- Botones de marcas -->
+<div id="brandColumns">
+    <!-- Bazar -->
+    <div id="bazarButtons" class="brand-column">
+        <h3>Bazar</h3>
+        <button class="brand-button" onclick="selectBrand('General')">General</button>
+        <button class="brand-button" onclick="selectBrand('Fashion/Bathbazar')">Fashion/Bathbazar</button>
     </div>
 
+    <!-- Planta Baja -->
+    <div id="plantaBajaButtons" class="brand-column">
+        <h3>Planta Baja</h3>
+        <button class="brand-button" onclick="selectBrand('1.7')">1.7</button>
+        <button class="brand-button" onclick="selectBrand('1.6')">1.6</button>
+        <button class="brand-button" onclick="selectBrand('1.5')">1.5</button>
+        <button class="brand-button" onclick="selectBrand('1.7 + IVA')">1.7 + IVA</button>
+        <button class="brand-button" onclick="selectBrand('1.6 + IVA')">1.6 + IVA</button>
+        <button class="brand-button" onclick="selectBrand('1.5 + IVA')">1.5 + IVA</button>
+    </div>
+</div>
     <!-- Campo de entrada y resultado -->
     <div>
         <label for="inputValue">Ingresa un número:</label>
         <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)" />
     </div>
     <button onclick="calculate()">Calcular</button>
-    <!-- Teclado numérico virtual -->
-<div id="virtualKeyboard">
-    <div class="vk-row">
-        <button onclick="insertNumber('7')">7</button>
-        <button onclick="insertNumber('8')">8</button>
-        <button onclick="insertNumber('9')">9</button>
-    </div>
-    <div class="vk-row">
-        <button onclick="insertNumber('4')">4</button>
-        <button onclick="insertNumber('5')">5</button>
-        <button onclick="insertNumber('6')">6</button>
-    </div>
-    <div class="vk-row">
-        <button onclick="insertNumber('1')">1</button>
-        <button onclick="insertNumber('2')">2</button>
-        <button onclick="insertNumber('3')">3</button>
-    </div>
-    <div class="vk-row">
-        <button onclick="insertNumber('0')">0</button>
-        <button onclick="insertNumber('.')">.</button>
-        <button onclick="deleteLast()">←</button>
-    </div>
-    <div class="vk-row">
-        <button onclick="calculate()" class="vk-calculate">= Calcular</button>
-    </div>
-</div>
-
     <h2>Resultado: <span id="result">-</span></h2>
-
-    
 
     <!-- Historial -->
     <h3>Historial de Operaciones:</h3>
