@@ -82,8 +82,8 @@ function handleKeyPress(event) {
 }
 
 function addToHistory(brand, inputValue, result) {
-    const historyTable = document.getElementById('historyTable').getElementsByTagName('tbody')[0];
-    const newRow = historyTable.insertRow();
+    const tbody = document.getElementById('historyTable').getElementsByTagName('tbody')[0];
+    const newRow = tbody.insertRow(0); // 👈 Insertar en la primera posición (arriba)
 
     const brandCell = newRow.insertCell(0);
     const inputValueCell = newRow.insertCell(1);
