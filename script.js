@@ -95,12 +95,3 @@ function addToHistory(brand, inputValue, result) {
     resultCell.textContent = result;
 }
 
-function insertNumber(char) {
-    const input = document.getElementById('inputValue');
-    input.value += char;
-}
-
-function deleteLast() {
-    const input = document.getElementById('inputValue');
-    input.value = input.value.slice(0, -1);
-}
