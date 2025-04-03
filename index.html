@@ -14,15 +14,6 @@
         <button class="category-button" onclick="showCategory('bazar')">Bazar</button>
         <button class="category-button" onclick="showCategory('plantabaja')">Planta Baja</button>
     </div>
-
-    <!-- Campo de entrada y resultado -->
-    <div>
-        <label for="inputValue">Ingresa un número:</label>
-        <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)" />
-    </div>
-    <button onclick="calculate()">Calcular</button>
-    <h2>Resultado: <span id="result">-</span></h2>
-
     <!-- Botones de marcas -->
     <div id="brandColumns">
         <!-- Bazar -->
@@ -43,6 +34,43 @@
             <button class="brand-button" onclick="selectBrand('1.5 + IVA')">1.5 + IVA</button>
         </div>
     </div>
+
+    <!-- Campo de entrada y resultado -->
+    <div>
+        <label for="inputValue">Ingresa un número:</label>
+        <input id="inputValue" type="number" step="any" placeholder="Ingrese un número" onkeypress="handleKeyPress(event)" />
+    </div>
+    <button onclick="calculate()">Calcular</button>
+    <!-- Teclado numérico virtual -->
+<div id="virtualKeyboard">
+    <div class="vk-row">
+        <button onclick="insertNumber('7')">7</button>
+        <button onclick="insertNumber('8')">8</button>
+        <button onclick="insertNumber('9')">9</button>
+    </div>
+    <div class="vk-row">
+        <button onclick="insertNumber('4')">4</button>
+        <button onclick="insertNumber('5')">5</button>
+        <button onclick="insertNumber('6')">6</button>
+    </div>
+    <div class="vk-row">
+        <button onclick="insertNumber('1')">1</button>
+        <button onclick="insertNumber('2')">2</button>
+        <button onclick="insertNumber('3')">3</button>
+    </div>
+    <div class="vk-row">
+        <button onclick="insertNumber('0')">0</button>
+        <button onclick="insertNumber('.')">.</button>
+        <button onclick="deleteLast()">←</button>
+    </div>
+    <div class="vk-row">
+        <button onclick="calculate()" class="vk-calculate">= Calcular</button>
+    </div>
+</div>
+
+    <h2>Resultado: <span id="result">-</span></h2>
+
+    
 
     <!-- Historial -->
     <h3>Historial de Operaciones:</h3>
