@@ -30,10 +30,10 @@ function calculate() {
 
     switch (selectedBrand) {
         case 'General':
-            result = inputValue * 1.21 * 2 + 700;
+            result = inputValue * 1.21 * 2 + 1000;
             break;
         case 'Fashion/Bathbazar':
-            result = inputValue * 1.26 * 2 + 700;
+            result = inputValue * 1.24 * 2 + 1000;
             break;
         case '1.7':
             result = inputValue * 1.7;
